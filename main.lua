@@ -1,6 +1,7 @@
 --[[     VARIABLES    --]]
-Gamestate = require "hump.gamestate"
-ButtonManager = require "ButtonManager"
+local Gamestate = require "hump.gamestate"
+local ButtonManager = require "ButtonManager"
+local sti = require "sti"
 
 --Game States
 local menu = {}
@@ -49,6 +50,7 @@ function menu.enter()
     --Music
     MenuMusic:setLooping(true)
     love.audio.play(MenuMusic)
+    love.audio.stop(GameplayMusic)
     love.mouse.setVisible(true)
 end
 
@@ -99,13 +101,27 @@ function menu:draw()
     love.graphics.setColor(255,255,255)
  end
 
+
+
 --[[      BoT     --]]
 function BoTState.enter()
     love.audio.stop(MenuMusic)
     GameplayMusic:setLooping(true)
     love.audio.play(GameplayMusic)
     local CurrentPoints = 250
+    BoTmap = sti("Maps/BoT.lua") --load map
+    --Create Sprite Layer
+    BoTmap:addCustomLayer("Sprite Layer", 3)
 end
+
+function BoTState:draw()
+    love.graphics.setColor(1, 1, 1)
+    BoTmap:draw()
+end
+
+function BoTState:update(dt)
+    BoTmap:update(dt)
+ end
 
 function BoTState:keypressed(key, scancode, isrepeat)
     if key == "escape" then
@@ -113,10 +129,6 @@ function BoTState:keypressed(key, scancode, isrepeat)
     end
 end
 
-function BoTState:draw()
-
-
-end
 
 --[[      BoM     --]]
 function BoMState.enter()
@@ -124,13 +136,25 @@ function BoMState.enter()
     GameplayMusic:setLooping(true)
     love.audio.play(GameplayMusic)
     local CurrentPoints = 250
+    BoMmap = sti("Maps/BoT.lua") --load map
+    --Create Sprite Layer
+    BoMmap:addCustomLayer("Sprite Layer", 3)
 end
+
+function BoMState:draw()
+    love.graphics.setColor(1, 1, 1)
+    BoMmap:draw()
+end
+
+function BoMState:update(dt)
+    BoMmap:update(dt)
+ end
 
 function BoMState:keypressed(key, scancode, isrepeat)
     if key == "escape" then
         Gamestate.switch(menu)
     end
- end
+end
 
 --[[      BoJ     --]]
 function BoJState.enter()
@@ -138,12 +162,24 @@ function BoJState.enter()
     GameplayMusic:setLooping(true)
     love.audio.play(GameplayMusic)
     local CurrentPoints = 250
+    BoJmap = sti("Maps/BoT.lua") --load map
+    --Create Sprite Layer
+    BoJmap:addCustomLayer("Sprite Layer", 3)
 end
+
+function BoJState:draw()
+    love.graphics.setColor(1, 1, 1)
+    BoJmap:draw()
+end
+
+function BoJState:update(dt)
+    BoJmap:update(dt)
+ end
 
 function BoJState:keypressed(key, scancode, isrepeat)
     if key == "escape" then
         Gamestate.switch(menu)
     end
- end
+end
 
 
