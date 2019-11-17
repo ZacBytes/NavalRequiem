@@ -5,8 +5,10 @@ Pixel game made by ACS (I) NCC (SEA) 2019. Made with Lua using Love2D framework
 [![Feature Requests](https://feathub.com/ZacBytes/NavalRequiem?format=svg)](https://feathub.com/ZacBytes/NavalRequiem)
 
 # To Do
-- [ ] Add tile map draw function <img src="https://preloaders.evidweb.com/d_file.php?file=images/preloaders/squares.gif">
+- [X] Add tile map draw function
+- [ ] Tweak map anim speed <img src="https://preloaders.evidweb.com/d_file.php?file=images/preloaders/squares.gif">
 - [ ] Entity system
 - [ ] Entity placement GUI + System
+- [ ] TileMap designs for individual scenarios
 - [ ] Game Mechanics + Sound FX
 - [ ] Improve Graphics and polish
