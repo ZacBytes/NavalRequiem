@@ -6,9 +6,9 @@ Pixel game made by ACS (I) NCC (SEA) 2019. Made with Lua using Love2D framework
 
 # To Do
 - [X] Add tile map draw function
-- [ ] Tweak map anim speed <img src="https://preloaders.evidweb.com/d_file.php?file=images/preloaders/squares.gif">
-- [ ] Entity system
-- [ ] Entity placement GUI + System
+- [X] Tweak map anim speed
+- [ ] Sprite system <img src="https://preloaders.evidweb.com/d_file.php?file=images/preloaders/squares.gif">
+- [ ] Sprite placement system + UI for it
 - [ ] TileMap designs for individual scenarios
 - [ ] Game Mechanics + Sound FX
 - [ ] Improve Graphics and polish
